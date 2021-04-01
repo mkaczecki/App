@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/characters', [\App\Http\Controllers\CharacterController::class, 'index']);
 Route::patch('/characters/{character}', [\App\Http\Controllers\CharacterController::class, 'update']);
 Route::get('/characters/{character}', [\App\Http\Controllers\CharacterController::class, 'show']);
@@ -27,7 +26,4 @@ Route::get('/characters/{character}/edit', [\App\Http\Controllers\CharacterContr
 
 
 
-Auth::routes();
-
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
