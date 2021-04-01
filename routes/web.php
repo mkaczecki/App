@@ -27,3 +27,7 @@ Route::get('/characters/{character}/edit', [\App\Http\Controllers\CharacterContr
 
 
 
+Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
