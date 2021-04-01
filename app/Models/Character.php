@@ -12,4 +12,15 @@ class Character extends Model
     public function titles(){
         return $this->hasMany(Title::class);
     }
+
+    public static function boot(){
+        
+        parent::boot();
+
+        static::deleting(function($character) {
+            
+            $character->titles()->delete();
+
+        });
+    }
 }
