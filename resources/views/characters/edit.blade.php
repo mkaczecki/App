@@ -92,7 +92,7 @@
 
                     <div class="flex flex-wrap pt-5 pb-3">
                         <button type="submit"
-                            class="w-full select-none font-bold tracking-wide whitespace-no-wrap py-3 rounded  uppercase text-sm leading-normal no-underline  bg-cool-gray-600 text-white">
+                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded text-base leading-normal no-underline text-white bg-cool-gray-600 sm:py-4">
                             Save Details
                         </button>
                     </div>

@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
-Auth::routes();
 
+Auth::routes();
+Route::get('/', [\App\Http\Controllers\CharacterController::class, 'index']);
 Route::get('/characters', [\App\Http\Controllers\CharacterController::class, 'index']);
 Route::patch('/characters/{character}', [\App\Http\Controllers\CharacterController::class, 'update']);
 Route::get('/characters/{character}', [\App\Http\Controllers\CharacterController::class, 'show']);

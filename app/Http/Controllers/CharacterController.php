@@ -44,9 +44,24 @@ class CharacterController extends Controller
     }
 
 
-    public function index(){
+    public function index(Request $request){
 
-        $characters = Character::paginate(10);
+        $characters=[];
+
+        if($request->has('gender')){
+            $gender = $request->query('gender');
+            $characters = Character::where('gender', $gender)->paginate(10);
+        }
+
+        else if($request->has('name')){
+            $name = $request->query('name');
+            $characters = Character::where('name', 'LIKE', '%'.$name.'%')->paginate(10);
+        }
+
+        else {
+            $characters = Character::paginate(10);
+        }
+        
         return view('characters.index', compact('characters'));
     }
 
