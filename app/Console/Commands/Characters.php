@@ -52,10 +52,10 @@ class Characters extends Command
                     }
                 }
             }
+            echo "\nSuccess! ".$amount." Character objects created.\n";
         } else {
             echo "\nSomething went wrong. No objects created\n";
         }
-        echo "\nSuccess! ".$amount." Character objects created.\n";
         return 0;
     }
 }
